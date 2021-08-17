@@ -1,3 +1,4 @@
+import 'package:chat_application_1/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_application_1/pages/Home_Page.dart';
 import 'package:chat_application_1/pages/Login_Page.dart';
@@ -16,12 +17,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.purple,
           fontFamily: GoogleFonts.lato().fontFamily,
           primaryTextTheme: GoogleFonts.latoTextTheme()),
+      // debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(brightness: Brightness.dark),
       initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage()
+        MyRoutes.homeroutes: (context) => HomePage(),
+        MyRoutes.loginroutes: (context) => LoginPage()
       },
     );
   }
